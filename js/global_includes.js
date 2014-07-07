@@ -14,11 +14,12 @@ function menu_init(){
             url: "http://brasovtour.com/mobile-app/ajax/ajax.php",
             data:  string,
             success:function(response){
-            	return response;
+            	menu=response;
             	localStorage['navbarPanel']=response;
             	
           		}
 		  });
+		  return menu;
 	 }
 		
 		 
@@ -30,11 +31,11 @@ function navbar_init(){
 	
 }
 function navbar(d){
-	
 	 	var header = $(d).find('#wrap-header');
 	 	header.empty();
 	 	header.append(navbar_init());
-		 header.find('#btn-menu').on('click',function(){
+	    header.find('#btn-menu').on('click',function(){
+	    	
 			 $('#menu').panel('open');
  		 });	
 }
