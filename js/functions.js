@@ -49,7 +49,7 @@ function validate_login(){
               
              }else
              {
-             	alert('Eroare:'+response);
+             	alert('Eroare:'+response+"name:"+response['username']+":"+response['password']);
              }
             	$.unblockUI();
             	
