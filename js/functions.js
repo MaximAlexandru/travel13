@@ -32,9 +32,9 @@ function getfooterlocation(){
 
 
 function validate_login(){
-		var username = $('#username').val();
-		var password = $('#password').val();
-		string="username="+username+"&"+"password="+password;
+		 var username = $('#username').val();
+		 var password = $('#password2').val();
+		string=$("#form-login").serialize();
 		$.blockUI({ message: '<img src="http://brasovtour.com/mobile-app/img/busy.gif" />' });
         $.ajax({
             type: 'POST',
@@ -49,7 +49,8 @@ function validate_login(){
               
              }else
              {
-             	alert('Eroare:'+response+"name:"+response['username']+":"+response['password']);
+             	
+             	alert('Eroare:'+response);
              }
             	$.unblockUI();
             	
